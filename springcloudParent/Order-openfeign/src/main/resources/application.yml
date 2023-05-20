@@ -1,0 +1,25 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: order-openfeign
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8849
+        username: nacos
+        password: nacos
+        namespace: public
+logging:
+  level:
+    com.springcloud.feign: debug
+    #以下是局部配置，对被调用方 stock-service有效
+feign:
+  client:
+    config:
+      stock-service:
+        logger-level:  FULL
+        connect-timeout: 2000
+        read-timeout: 2000
+        request-interceptors:
+          com.springcloud.feign.interceptor.FeignInterceptorConfig

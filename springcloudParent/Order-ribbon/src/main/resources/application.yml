@@ -1,0 +1,16 @@
+server:
+  port: 8030
+spring:
+  application:
+    name: order-ribbon
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8849
+        username: nacos
+        password: nacos
+        namespace: public
+
+#stock-service:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
