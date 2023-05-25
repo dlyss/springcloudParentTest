@@ -7,13 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-public class OrderApplication {
+public class OrderSentinelApplication {
     public static void main(String[] args) {
-        SpringApplication.run(OrderApplication.class,args);
+        SpringApplication.run(OrderSentinelApplication.class,args);
     }
-    @Bean
-    public RestTemplate restTemplate(RestTemplateBuilder builder){
-        RestTemplate restTemplate = builder.build();
-        return restTemplate;
-    }
+
 }

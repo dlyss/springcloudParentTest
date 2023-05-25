@@ -1,0 +1,25 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: order-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8849
+        username: nacos
+        password: nacos
+        namespace: public
+    gateway:
+      #路由规则
+    #  routes:
+     #   - id: order-route #路由唯一标识
+    #      uri:
+    #      predicates: lb://order-ribbon #lb:使用nacos本地负载策略
+    #        - Path=/order-serv/**
+    #      filters:
+     #       - StripPrefix=1 #转发之前去掉第一层路径
+      discovery:
+        locator:
+          enabled: true #是否启动自动识别nacos服务
+

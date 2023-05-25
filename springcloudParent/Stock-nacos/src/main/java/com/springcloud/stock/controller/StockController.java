@@ -12,6 +12,6 @@ public class StockController {
     @RequestMapping("/order")
     public String stock() {
         System.out.printf("stock order success");
-        return "stock order success:"+port;
+        return "stock order success:"+port+"--"+System.currentTimeMillis();
     }
 }
